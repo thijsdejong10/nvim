@@ -1,6 +1,6 @@
 return {
   "lervag/vimtex",
   init = function()
-    vimtex_compiler_method = "latexmk"
+    vimtex_compiler_method = "tectonic"
   end,
 }

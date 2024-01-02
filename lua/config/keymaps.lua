@@ -2,6 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 ---- floating terminal
+-- vim.api.nvim_del_keymap("n", "<c-/>")
+
 local Util = require("lazyvim.util")
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
@@ -19,13 +21,7 @@ end
 local lazyterm = function()
   Util.float_term(nil, { cwd = Util.get_root(), border = "rounded" })
 end
-map("n", "<leader>ft", lazyterm, { desc = "Terminal (root dir)" })
-map("n", "<leader>fT", function()
-  Util.float_term()
-end, { desc = "Terminal (cwd)" })
-map("n", "<c-\\>", lazyterm, { desc = "Terminal (root dir)" })
-map("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
-map("t", "<C-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("n", "Q", function()
   require("mini.bufremove").delete(0, false)
 end, { desc = "Delete Buffer" })
+map("n", "<c-/>", ":ToggleTerm<CR>")

@@ -1,8 +1,8 @@
 return {
   {
     "lervag/vimtex",
-    init = function()
-      vimtex_compiler_method = "tectonic"
+    config = function()
+      vim.g.vimtex_compiler_method = "tectonic"
     end,
   },
   {

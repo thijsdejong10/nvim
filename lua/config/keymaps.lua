@@ -21,8 +21,7 @@ end
 local lazyterm = function()
   Util.float_term(nil, { cwd = Util.get_root(), border = "rounded" })
 end
-map("n", "Q", function()
-  require("mini.bufremove").delete(0, false)
-end, { desc = "Delete Buffer" })
+
+map("n", "Q", LazyVim.ui.bufremove, { desc = "Delete Buffer" })
 map("n", "<c-/>", ":ToggleTerm<CR>")
 map("n", "<leader>r", ":w<CR>:TermExec cmd='py %'<CR>")

@@ -1,6 +1,10 @@
 return {
   {
-    { "EdenEast/nightfox.nvim" }, -- lazy
+    { "EdenEast/nightfox.nvim", setup = {
+      options = {
+        transparent = false,
+      },
+    } }, -- lazy
   },
   {
     "catppuccin/nvim",

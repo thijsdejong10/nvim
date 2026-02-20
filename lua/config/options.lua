@@ -4,7 +4,9 @@
 -- Set border of some LazyVim plugins to rounded
 local opt = vim.opt
 opt.relativenumber = false
-
+vim.diagnostic.config({
+  update_in_insert = false,
+})
 local function bordered(hl_name)
   return {
     { "╭", hl_name },

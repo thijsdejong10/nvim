@@ -1,10 +1,13 @@
 return {
   {
-    { "EdenEast/nightfox.nvim", setup = {
-      options = {
-        transparent = false,
-      },
-    } }, -- lazy
+    "EdenEast/nightfox.nvim",
+    config = function()
+      require("nightfox").setup({
+        options = {
+          transparent = true,
+        },
+      })
+    end,
   },
   {
     "catppuccin/nvim",

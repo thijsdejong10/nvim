@@ -13,5 +13,6 @@ local map = LazyVim.safe_keymap_set
 
 map("n", "Q", Snacks.bufdelete.delete, { desc = "Delete Buffer" })
 map("n", "<c-/>", ":ToggleTerm<CR>")
+map("t", "<c-/>", [[<C-\><C-n>:ToggleTerm<CR>]])
 map("n", "<leader>r", ":w<CR>:TermExec cmd='uv run %'<CR>")
 map("t", "<esc>", [[<C-\><C-n>]])
